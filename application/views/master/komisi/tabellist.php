@@ -1,0 +1,97 @@
+<?php $this->load->view('header'); ?>
+
+</head>
+<form method="POST"  name="search" action='<?php echo base_url(); ?>index.php/master/tourguide/search'>
+	<input type="hidden" name="btn_search" id="btn_search" value="y"/>
+	<div class="row">
+		<div class="col-md-10">
+			<b>Search</b>&nbsp;
+			<input type="text" size="60" maxlength="30" name="search_keyword" id="search_keyword" class="form-control-new" value="<?php if($search_keyword){ echo $search_keyword; } ?>" />
+		</div>
+		
+		<div class="col-md-2" align="right">
+			<button type="submit" class="btn btn-info btn-icon btn-sm icon-left" onClick="show_loading_bar(100)">Search<i class="entypo-search"></i></button>
+			<a href="<?php echo base_url()."index.php/master/komisi/add_new/"; ?>" onClick="show_loading_bar(100)" class="btn btn-info btn-icon btn-sm icon-left" title="" >Tambah<i class="entypo-plus"></i></a>
+		</div>
+	</div>
+</form>
+
+<hr/>
+
+<?php
+if($this->session->flashdata('msg'))
+{
+  $msg = $this->session->flashdata('msg');
+  
+  ?><div class="alert alert-<?php echo $msg['class'];?>"><?php echo $msg['message']; ?></div><?php
+}
+?>
+	
+<div id="table-2_wrapper" class="dataTables_wrapper form-inline" role="grid">
+	<table class="table table-bordered responsive">
+        <thead class="title_table">
+			<tr>
+				<th width="10"><center>No</center></th>
+				<th width="80"><center>Group ID</center></th>
+				<th><center>Nama</center></th>
+				<th width="100"><center>Komisi Office</center></th>
+				<th width="100"><center>Komisi TL</center></th>
+				<th width="100"><center>Komisi TG</center></th>
+				<th width="100"><center>Komisi Driver</center></th>
+				<th width="100"><center>Navigasi</center></th>
+			</tr>
+		</thead>
+		<tbody>
+		
+		<?php
+		if(count($data)==0)
+		{
+			echo "<tr><td colspan='100%' align='center'>Tidak Ada Data</td></tr>";
+		}
+		
+		$no=1;
+		foreach($data as $val)
+		{
+            $bgcolor = "";
+            if($no%2==0)
+            {
+                $bgcolor = "background:#f7f7f7;";
+            }
+			?>
+			<tr style="cursor:pointer; <?php echo $bgcolor; ?>" onmouseover="change_onMouseOver('<?php echo $no; ?>')" onmouseout="change_onMouseOut('<?php echo $no; ?>')" id="<?php echo $no; ?>">
+				<td><?php echo $no; ?></td>
+				<td><?php echo $val["GroupID"]; ?></td>
+                <td align="left"><?php echo $val["Nama"]; ?></td>
+                <td align="right"><?php echo $val["Komisi_Office"]; ?></td>
+                <td align="right"><?php echo $val["Komisi_TL"]; ?></td>
+                <td align="right"><?php echo $val["Komisi_TG"]; ?></td>
+                <td align="right"><?php echo $val["Komisi_Drv"]; ?></td>
+                <td align="center">
+	                <a href="<?php echo base_url();?>index.php/master/komisi/edit_form/<?php echo $val["GroupID"]; ?>" class="btn btn-info btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Edit" title=""><i class="entypo-pencil"></i></a>
+                	 <a href="<?php echo base_url();?>index.php/master/komisi/delete_data/<?php echo $val["GroupID"]; ?>" class="btn btn-danger btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Hapus" title=""><i class="entypo-trash"></i></a>
+                </td>
+            </tr>
+			<?php	
+			
+			$no++;			
+		}
+		?>
+		
+		</tbody>
+	</table>
+
+	<div class="row">
+		<div class="col-xs-6 col-left">
+			<div id="table-2_info" class="dataTables_info">&nbsp;</div>
+		</div>
+		<div class="col-xs-6 col-right">
+			<div class="dataTables_paginate paging_bootstrap">
+				<?php echo $pagination; ?>
+			</div>
+		</div>
+	</div>	
+	
+</div>
+	
+
+<?php $this->load->view('footer'); ?>

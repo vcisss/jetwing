@@ -1,0 +1,219 @@
+
+table{
+	margin-left:auto; 
+	margin-right:auto;
+	
+	border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+a
+{
+ 	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	text-decoration : none;
+	color: #4A8CFF;
+}
+
+.table_class table 
+{
+	background-color: white;
+	text-align: left;
+	border: 1px solid #BBD5F4;
+	
+	border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+.table_class table a, .table_class table, .table_class tbody, .table_class tfoot, .table_class tr, .table_class th, .table_class td 
+{
+	font-family: georgia, "times new roman", serif;
+	line-height: 1.5em;
+	font-size: 13px;
+	color: #fffff;
+}
+
+.table_class table a
+{
+	text-decoration: none;
+	color: #4A8CFF;
+}
+
+.table_class th
+{
+	color: #6E6D8F;
+	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	padding-left: 5px;
+	background-color: #fff;
+	border-bottom: 1px solid #aeb3b6;
+	background-image: url(../images/top-bottom.gif);
+}
+
+.table_class td
+{
+ 	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	border: 1px dotted #DADEEE;
+	padding-left: 3px;
+}
+
+.table_class_list table 
+{
+	background-color: white;
+	text-align: left;
+	border: 1px solid #BBD5F4;
+	
+	border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+
+}
+
+.table_class_list table a, .table_class_list table, .table_class_list tbody, .table_class_list tfoot, .table_class_list tr, .table_class_list th, .table_class_list td 
+{
+	font-family: georgia, "times new roman", serif;
+	line-height: 1.5em;
+	font-size: 13px;
+	color: #fffff;
+}
+
+.table_class_list table a
+{
+	text-decoration: none;
+	color: #4A8CFF;
+}
+
+.table_class_list th
+{
+	color: #6E6D8F;
+	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	padding-left: 5px;
+	background-color: #fff;
+	border-bottom: 1px solid #aeb3b6;
+	background-image: url(../images/top-bottom.gif);
+}
+
+.table_class_list td
+{
+ 	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	border: 1px dotted #DADEEE;
+	padding-left: 3px;
+}
+
+.table_class_list tbody tr:hover td
+{
+	background-color: #DFE8F6;
+}
+
+.logo
+{
+	font-family		 : Lucida Grande, Verdana, Geneva, Sans-serif;
+	text-align       : center;
+	border           : 5px double #EAECF5;
+	background-image : url(../images/smflogo.gif);
+	background-repeat: repeat-x;
+	height           : 94px;
+}
+
+.LogoTitle
+{
+ 	font:25px georgia bold italic;
+	color: white;
+	letter-spacing:0.1em;
+	line-height:0px;
+	padding-left:15px; 
+	padding-top:25px; 
+	padding-right:10px;"
+}
+
+.button {
+display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+/*
+	font-family		 : Lucida Grande, Verdana, Geneva, Sans-serif;
+	text-align       : center;
+	font-size        : 11px;
+	COLOR            : black;
+	border           : 3px double #EAECF5;
+	width            : auto;
+	background-image : url(../images/th_bg.jpg);
+*/
+}
+
+.line {
+	border: 0;
+	width: 100%;
+	color: #f00;
+	background-color: #ED5929;
+	height: 2px;
+	padding-bottom : 0px;
+}
+
+.CrossLine{
+	background-image : url(../images/dark_fade_g.png);
+	width: 100%;
+	height: 30px;
+}
+
+.pageName {
+	font:21px georgia;
+	color: #CC3300;
+	letter-spacing:0.1em;
+	line-height:0px;
+}
+
+.cursor_image
+{
+ 	border : 0px;
+	cursor : pointer;	
+}
+
+.resizeSelectForm
+{
+ 	width:80px;
+}
+
+.resizeSelectForm2
+{
+ 	width:100px;
+}
+
+.InputAlignRight
+{
+	text-align: right;
+}

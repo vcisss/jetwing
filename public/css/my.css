@@ -1,0 +1,36 @@
+.form-control-new{
+	height: 25px;
+	padding: 3px;
+	font-size: 12px;
+	line-height: 1.42857;
+	color: #555;
+	background-color: #fafafa;
+	background-image: none;
+	border: 1px solid #EBEBEB;
+	border-radius: 3px;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.title_table, thead.title_table tr th{
+	background-color: #009490;
+    color: white; 
+    font-weight: bold;
+}
+
+div.datepicker table,
+.table{
+	font-size: 12px;	
+}
+
+.link_menu {
+    cursor: pointer;
+    color: #A6A7AA;
+}
+
+.link_menu:hover{
+    color: #000;
+}
+
+.sm-new{
+	padding:1px 1px;
+}

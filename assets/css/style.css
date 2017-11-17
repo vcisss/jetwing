@@ -1,0 +1,101 @@
+
+.table_class table 
+{
+	background-color: white;
+	text-align: left;
+	border: 1px solid #D52B00;
+}
+
+.table_class table a, .table_class table, .table_class tbody, .table_class tfoot, .table_class tr, .table_class th, .table_class td 
+{
+	font-family: georgia, "times new roman", serif;
+	line-height: 1.5em;
+	color: #FFFFFF;
+	empty-cells: hide;
+}
+
+.table_class table a
+{
+	text-decoration: none;	
+	color: #4A8CFF;
+}
+
+.table_class th
+{
+	color: white;
+	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	background-color: #000000;
+	border: 1px solid #aeb3b6;
+	background-image: url(../images/catbg.gif);
+	height:25px;
+	font-size:13px;
+	padding: 6px;
+}
+
+.table_class td
+{
+ 	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	border: 1px solid #DADEEE;
+	font-weight : bold;
+	font-size:13px;
+	padding: 6px;
+}
+
+	.table_cla	ist table 
+{
+	background-color: white;
+	text-align: left;
+	border: 1px solid #D52B00;
+	font-size:10px;
+}
+
+.table_class_list table a, .table_class_list table, .table_class_list tbody, .table_class_list tfoot, .table_class_list tr, .table_class_list th, .table_class_list td 
+{
+	font-family: georgia, "times new roman", serif;
+	line-height: 1.5em;
+	color: #000000;
+	empty-cells: hide;
+	font-size:10px;
+}
+
+.table_class_list table a
+{
+	text-decoration: none;	
+	color: #4A8CFF;
+	font-size:10px;
+}
+
+.table_class_list th
+{
+	color: white;
+	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	background-color: #000000;
+	border: 1px solid #aeb3b6;
+	background-image: url(../images/catbg.gif);
+	height:25px;
+	font-size:10px;
+	padding: 6px;
+}
+
+.table_class_list td
+{
+ 	font-family: Lucida Grande, Verdana, Geneva, Sans-serif;
+	border: 1px solid #DADEEE;
+	padding-left: 3px;
+	font-weight : bold;
+	font-size:10px;
+	padding: 6px;
+}
+
+.table_class_list tbody tr:hover td
+{
+	background-color: #4286f4;
+}
+
+
+
+.cursor_image
+{
+ 	border : 0px;
+	cursor : pointer;	
+}
