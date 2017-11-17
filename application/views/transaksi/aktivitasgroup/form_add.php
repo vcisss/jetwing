@@ -133,6 +133,7 @@ function edit(kdgroup,kdaktivitas){
                 $('[name="v_idr"]').val(data.IDR);
                 $('[name="v_usd"]').val(data.USD);
                 $('[name="v_rmb"]').val(data.RMB);
+                $('[name="v_ket"]').val(data.Keterangan);
                 
                 //$('#btnSave').attr('hidden',false);
                 document.getElementById("save_add").style.display = "none";
@@ -403,6 +404,13 @@ function search_data(){
 	            <td class="title_table">RMB <font color="red"><b>(*)</b></font></td>
 	            <td><input readonly="readonly" type="text" class="form-control-new" value="0" name="v_rmb" id="v_rmb" maxlength="255" size="100" style="text-align: right;width:100px;"></td>
 	        
+	        </tr>
+	        
+	        <tr>
+	            <td class="title_table">Keterangan <font color="red"><b>(*)</b></font></td>
+	            <td colspan="3">
+	            	<input type="text" class="form-control-new" value="" name="v_ket" id="v_ket" maxlength="255" size="100">
+	            </td>
 	        </tr>
 	        
 		</table>

@@ -94,6 +94,7 @@ class Aktivitasgroup_model extends CI_Model {
 				  a.IDR,
 				  a.USD,
 				  a.RMB,
+				  a.Keterangan,
 				  '0' AS Status,
 				  '1' AS id 
 				FROM
@@ -121,6 +122,7 @@ class Aktivitasgroup_model extends CI_Model {
 				  a.IDR,
 				  a.USD,
 				  a.RMB,
+				  a.Keterangan,
 				  '0' AS Status,
 				  '1' AS id 
 				FROM
@@ -146,7 +148,8 @@ class Aktivitasgroup_model extends CI_Model {
 				  a.Pax,
 				  a.IDR,
 				  a.USD,
-				  a.RMB
+				  a.RMB,
+				  a.Keterangan
 				FROM
 				  `aktivitasgroup` a 
 				  INNER JOIN `aktivitas` b 
@@ -183,7 +186,7 @@ class Aktivitasgroup_model extends CI_Model {
 		return $this->getRow($sql);
 	}
 	
-	function save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user){
+	function save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user, $ket){
 		$mylib = new globallib();
 		$this->locktables('aktivitasgroup');
 		$data= array('KdGroup' => $kdgroup,
@@ -193,6 +196,7 @@ class Aktivitasgroup_model extends CI_Model {
 					 'IDR' => $idr,
 					 'USD'=> $usd,
 					 'RMB'=> $rmb,
+					 'Keterangan'=> $ket,
 					 'AddUser' => $user,
 					 'AddDate' => date('Y-m-d')
 					);
@@ -202,14 +206,14 @@ class Aktivitasgroup_model extends CI_Model {
 		return $insertid;
 	}
 	
-	function update($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user){
+	function update($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user, $ket){
 		$mylib = new globallib();
 		$tgl_dok= $mylib->ubah_tanggal($tgl);
 		
 		$this->locktables('aktivitasgroup');
 		$date = date('Y-m-d');
 					
-		$sql="UPDATE aktivitasgroup SET Tanggal='$tgl_dok',Pax='$pax',IDR='$idr',USD='$usd',RMB='$rmb',EditUser='$user', EditDate='$date'
+		$sql="UPDATE aktivitasgroup SET Tanggal='$tgl_dok',Pax='$pax',IDR='$idr',USD='$usd',RMB='$rmb',EditUser='$user', EditDate='$date', Keterangan='$ket'
 		     WHERE KdGroup='$kdgroup' AND KdAktivitas='$activity'";
 		$qry = $this->db->query($sql);
 		$this->unlocktables();

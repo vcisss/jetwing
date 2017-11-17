@@ -164,6 +164,8 @@ class Aktivitasgroup extends CI_Controller
         $idr = $this->input->post('v_idr');
         $usd = $this->input->post('v_usd');
         $rmb = $this->input->post('v_rmb');
+        
+        $ket = $this->input->post('v_ket');
 		
 		$flag = $this->input->post('v_flag');
 		
@@ -172,13 +174,13 @@ class Aktivitasgroup extends CI_Controller
         
         if($flag=="Add")
         {
-            $kdgroup = $this->aktivitasgroup_model->save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user);
+            $kdgroup = $this->aktivitasgroup_model->save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user, $ket);
        		 
        		$this->session->set_flashdata('msg', array('message' => 'Proses tambah aktivias group berhasil','class' => 'success'));
        	} 
         else if($flag=="Edit")
         {
-        	$this->aktivitasgroup_model->update($kdgroup, $namagroup, $tglmulai, $tglselesai, $pax, $kdtourguide, $persentaseguide, $user);
+        	$this->aktivitasgroup_model->update($kdgroup, $namagroup, $tglmulai, $tglselesai, $pax, $kdtourguide, $persentaseguide, $user, $ket);
         	
         	$this->session->set_flashdata('msg', array('message' => 'Proses update berhasil','class' => 'success'));
         }
@@ -272,6 +274,7 @@ class Aktivitasgroup extends CI_Controller
         $idr = $this->input->post('v_idr');
         $usd = $this->input->post('v_usd');
         $rmb = $this->input->post('v_rmb');
+        $ket = $this->input->post('v_ket');
 		
 		$flag = $this->input->post('v_flag');
 		
@@ -280,13 +283,13 @@ class Aktivitasgroup extends CI_Controller
         
         if($flag=="Add")
         {
-            $kdgroup = $this->aktivitasgroup_model->save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user);
+            $kdgroup = $this->aktivitasgroup_model->save($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user, $ket);
        		 
        		$this->session->set_flashdata('msg', array('message' => 'Proses tambah aktivias group berhasil','class' => 'success'));
        	} 
         else if($flag=="Edit")
         {
-        	$this->aktivitasgroup_model->update($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user);
+        	$this->aktivitasgroup_model->update($kdgroup, $tgl, $activity, $pax, $idr, $usd, $rmb,  $user, $ket);
         	
         	$this->session->set_flashdata('msg', array('message' => 'Proses update aktivias group berhasil','class' => 'success'));
         }

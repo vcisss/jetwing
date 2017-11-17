@@ -22,7 +22,8 @@ $mylib = new globallib();
             <tr>
                 <th width="30"><center>No</center></th>
 		        <th width="100"><center>Tanggal</center></th>
-		        <th><center>Nama Aktivitas</center></th>
+		        <th width="500"><center>Nama Aktivitas</center></th>
+		        <th><center>Keterangan</center></th>
 		        <th width="100"><center>Pax</center></th>
 		        <th width="100"><center>IDR</center></th>		        
 		        <th width="100"><center>USD</center></th>
@@ -48,6 +49,7 @@ $mylib = new globallib();
                     <td><?php echo $no; ?></td>
                     <td align="center"><?php echo $mylib->ubah_tanggal($val["Tanggal"]); ?></td>
                     <td align="left"><?php echo $val["NamaAktivitas"]; ?></td>
+                    <td align="left"><?php echo $val["Keterangan"]; ?></td>
                     <td align="right"><?php echo number_format($val["Pax"]); ?></td>
                     <td align="right"><?php echo number_format($val["IDR"]); ?></td>
                     <td align="right"><?php echo number_format($val["USD"]); ?></td> 
