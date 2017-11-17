@@ -146,11 +146,36 @@ function analisa_cari()
 		}
 		
 			echo $table;
+			if($tour['TipeOptionTour']==1){
+				$tipe = 'With TL';
+			}elseif($tour['TipeOptionTour']==2){
+				$tipe = 'Fit TL';
+			}else{
+				$tipe = 'Non TL';
+			}
 			
     	?>
+    			<thead>
+	    			<tr>
+	    				<td align="left">Group</td>
+	    				<td><?=$tour['NamaGroup'];?></td>
+	    			</tr>
+	    			<tr>
+	    				<td align="left">Pax</td>
+	    				<td><?=$tour['Pax_adult'].' adult + '.$tour['Pax_child'].' child';?></td>
+	    			</tr>
+	    			<tr>
+	    				<td align="left">Guide %</td>
+	    				<td><?=$tour['PersentaseGuide'];?></td>
+	    			</tr>
+	    			<tr>
+	    				<td align="left">Type</td>
+	    				<td><?=$tipe;?></td>
+	    			</tr>
+    			</thead>
 	    		<thead class="title_table">
 	    			<tr>
-	    				<th width="20"><center>No.</center></th>
+	    				<th width="30"><center>No.</center></th>
 	    				<th><center>Description</center></th>
 	    				<th width="100"><center>Pax</center></th>
 	    				<th width="100"><center>IDR</center></th>
@@ -209,7 +234,7 @@ function analisa_cari()
     	?>
 	    		<thead class="title_table">
 	    			<tr>
-	    				<th width="20"><center>No.</center></th>
+	    				<th width="30"><center>No.</center></th>
 	    				<th><center>Description</center></th>
 	    				<th width="100"><center>Pax</center></th>
 	    				<th width="100"><center>IDR</center></th>
@@ -307,7 +332,7 @@ function analisa_cari()
     	?>
 	    		<thead class="title_table">
 	    			<tr>
-	    				<th width="20"><center>No.</center></th>
+	    				<th width="30"><center>No.</center></th>
 	    				<th><center>Description</center></th>
 						<th width="100"><center>Pax</center></th>
 	    				<th width="100"><center>SELL</center></th>

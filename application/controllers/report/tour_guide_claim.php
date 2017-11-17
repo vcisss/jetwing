@@ -56,6 +56,7 @@ class Tour_guide_claim extends CI_Controller {
         $data['flag'] = $this->input->post("flag");
         $data['base_url'] = $this->input->post("base_url");
         $data['btn_excel'] = $this->input->post("btn_excel");
+        $data['tour'] = $this->tour_guide_claim_model->getTour($data['v_kdtour']);
         
         $data['judul'] = "Reprot Tour Guide Claim";
         

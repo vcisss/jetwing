@@ -39,6 +39,16 @@ class Tour_guide_claim_model extends CI_Model {
 		return $this->getArrayResult($sql);
 	}
 	
+	function getTour($kdgroup)
+    {
+    	$sql = "
+    		SELECT * FROM group_tour where KdGroup='$kdgroup';
+		";
+		
+		$hasil = $this->getArrayResult($sql);
+		return $hasil[0];
+	}
+	
 	function getArrayCurrency()
     {
     	$sql = "
