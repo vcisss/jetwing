@@ -139,7 +139,7 @@ $modul = "Tour";
 	            </div>
 	        </div>
 	        <div class="form-group"> 
-	            <label class="col-md-2">Guide %<font color="red"><b>(*)</b></font></label>
+	            <label class="col-md-2">Office %<font color="red"><b>(*)</b></font></label>
 	            <div class="col-md-6"> 
 	            	<input type="text" class="form-control-new col-lg-2" value="<?=$header[0]['PersentaseGuide'];?>" name="v_persentaseguide" id="v_persentaseguide" style="text-align: right;">
 	            </div>
