@@ -165,7 +165,7 @@ function analisa_cari()
 	    				<td><?=$tour['Pax_adult'].' adult + '.$tour['Pax_child'].' child';?></td>
 	    			</tr>
 	    			<tr>
-	    				<td align="left">Guide %</td>
+	    				<td align="left">Office %</td>
 	    				<td><?=$tour['PersentaseGuide'];?></td>
 	    			</tr>
 	    			<tr>
