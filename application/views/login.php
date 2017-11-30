@@ -66,7 +66,7 @@
 <td width="3%" style="background-color: #F5f5f5;">
 </td>
          <td style="background-color: #F5F5F5; margin:10px; padding: 100; width: 40%;">
-			<br><font color="#fe0a0a" size="5"><b>PT. JETWING BALI</b></font><br>
+			<br><font color="#fe0a0a" size="5"><b>PT. JETWINGS BALI</b></font><br>
 			<font color="#fe0a0a" size="2"><b>Tour Travel In Bali, Indonesia </b></font>
 			<div class="login-form">
             <form action="<?= base_url(); ?>welcome/verified" method="post">

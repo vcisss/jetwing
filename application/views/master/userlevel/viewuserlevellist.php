@@ -64,10 +64,11 @@ for($a = 0;$a<count($userleveldata);$a++)
 		<a 	href="<?=base_url();?>index.php/master/userlevel/delete_userlevel/<?=$userleveldata[$a]['UserLevelID'];?>"><img src='<?=base_url();?>public/images/cancel.png' border = '0' title = 'Delete'/></a>		
 		<?php
 			}
-			
+			if($link->view=="Y"||$link->edit=="Y"||$link->delete=="Y"||$link->add=="Y")
+			{
 		?>
-		<a 	href="#"><img src='<?=base_url();?>public/images/detail.png' border = '0' title = 'Set Permissions'/></a>
-	  <?php ?>
+		<a 	href="<?=base_url();?>index.php/master/userpermission/permission_list/<?=$userleveldata[$a]['UserLevelID'];?>"><img src='<?=base_url();?>public/images/detail.png' border = '0' title = 'Set Permissions'/></a>
+	  <?php } ?>
 		</td>
 <?php } ?>
 		<td nowrap><?=$userleveldata[$a]['UserLevelID'];?></td>

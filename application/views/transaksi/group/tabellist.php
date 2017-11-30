@@ -1,4 +1,6 @@
-<?php $this->load->view('header'); ?>
+<?php $this->load->view('header'); 
+$userlevel = $this->session->userdata('userlevel');
+?>
 
 </head>
 <form method="POST"  name="search" action='<?php echo base_url(); ?>index.php/transaksi/group/search'>
@@ -14,7 +16,9 @@
 	    </div>
 		<div class="col-md-2" align="right">
 			<button type="submit" class="btn btn-info btn-icon btn-sm icon-left" onClick="show_loading_bar(100)">Search<i class="entypo-search"></i></button>
+			<?php if($userlevel!='1'){?>
 			<a href="<?php echo base_url()."index.php/transaksi/group/add_new/"; ?>" onClick="show_loading_bar(100)" class="btn btn-info btn-icon btn-sm icon-left" title="" >Tambah<i class="entypo-plus"></i></a>
+			<?php } ?>
 		</div>
 	</div>
 </form>
@@ -43,7 +47,9 @@ if($this->session->flashdata('msg'))
 				<th class="col-xs-2"><center>Guide</center></th>
 				<th class="col-xs-1"><center>Tipe Optional</center></th>
 				<th class="col-xs-1"><center>Status</center></th>
+				<?php if($userlevel!='1'){?>
 				<th class="col-xs-1"><center>Navigasi</center></th>
+				<?php }?>
 			</tr>
 		</thead>
 		<tbody>
@@ -83,20 +89,23 @@ if($this->session->flashdata('msg'))
                 <td align="center"><?php echo $val["NamaTourGuide"]." ( ".$val["UserName"]." )"; ?></td>
                 <td align="center"><?php echo $tipe; ?></td>
                 <td align="center"><?= $val["Status"]==1 ? 'Open' :'Close' ; ?></td>
-                <td align="center">
-				    <?php if($val["Status"]=="1"){?>
-	                <a href="<?php echo base_url();?>index.php/transaksi/group/edit_form/<?php echo $val["KdGroup"]; ?>" class="btn btn-info btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Edit" title=""><i class="entypo-pencil"></i></a>
-					<a href="<?php echo base_url();?>index.php/transaksi/group/lock_form/<?php echo $val["KdGroup"]; ?>" class="btn btn-danger btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Lock" title=""><i class="entypo-lock"></i></a>
-					<?php }else{?>
-						<button type="button" class="btn btn-danger btn-sm sm-new tooltip-primary"  data-toggle="tooltip" data-placement="top" data-original-title="Lock" title="" onclick="info_lock()" >
-                            <i class="entypo-lock"></i>
-                        </button>
-						<?php if(!empty($otorisasi)){?>
-						<a href="<?php echo base_url();?>index.php/transaksi/group/open_lock/<?php echo $val["KdGroup"]; ?>" class="btn btn-success btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Open" title=""><i class="entypo-key"></i></a>
-					    <?php } ?>
-					<?php }?>
-				
-				</td>
+                <?php if($userlevel!='1'){?>
+	                <td align="center">
+	                
+					    <?php if($val["Status"]=="1"){?>
+		                <a href="<?php echo base_url();?>index.php/transaksi/group/edit_form/<?php echo $val["KdGroup"]; ?>" class="btn btn-info btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Edit" title=""><i class="entypo-pencil"></i></a>
+						<a href="<?php echo base_url();?>index.php/transaksi/group/lock_form/<?php echo $val["KdGroup"]; ?>" class="btn btn-danger btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Lock" title=""><i class="entypo-lock"></i></a>
+						<?php }else{?>
+							<button type="button" class="btn btn-danger btn-sm sm-new tooltip-primary"  data-toggle="tooltip" data-placement="top" data-original-title="Lock" title="" onclick="info_lock()" >
+	                            <i class="entypo-lock"></i>
+	                        </button>
+							<?php if(!empty($otorisasi)){?>
+							<a href="<?php echo base_url();?>index.php/transaksi/group/open_lock/<?php echo $val["KdGroup"]; ?>" class="btn btn-success btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Open" title=""><i class="entypo-key"></i></a>
+						    <?php } ?>
+						<?php }?>
+					
+					</td>
+				<?php } ?>
             </tr>
 			<?php	
 			

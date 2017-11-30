@@ -47,7 +47,7 @@ $modul = "Master User";
 		        </tr>-->
 		        
 		        <tr>
-		            <td class="title_table" width="150">Guide Name</td>
+		            <td class="title_table" width="150">Full Name</td>
 		            <td> 
 		            	<input type="text" class="form-control-new" value="" name="guidename" id="guidename" size="30" maxlength="20" <?=$gantikursor;?>>
 		            </td>
@@ -97,13 +97,16 @@ $modul = "Master User";
 			<tr>
 		            <td class="title_table" width="150">Pilih Level user</td>
 		            <td> 
-						<select class="form-control-new" id="leveluser" name="leveluser" <?=$gantikursor;?>>
-							<option value="-1">Administrtor</option>
-							<option value="1">Development</option>
-							<option value="2">Tour Guide</option>
-							<option value="3">Admin Office</option>
-							<option value="4">User Biasa</option>
-						</select>
+						<select class="form-control-new" name="leveluser" id="leveluser" <?=$gantikursor;?>>
+		            		<?php
+		            		for($a = 0;$a<count($master);$a++)
+		            		{								
+								?>
+								<option value= "<?=$master[$a]['UserLevelID']?>"><?=$master[$a]['UserLevelName']?></option>
+								<?php
+							}
+		            		?>
+		            	</select>
 		            </td>
 		        </tr>
 		        

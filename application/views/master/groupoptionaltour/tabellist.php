@@ -1,4 +1,6 @@
-<?php $this->load->view('header'); ?>
+<?php $this->load->view('header'); 
+$userlevel = $this->session->userdata('userlevel');
+?>
 
 </head>
 <form method="POST"  name="search" action='<?php echo base_url(); ?>index.php/master/groupoptionaltour/search'>
@@ -11,7 +13,9 @@
 		
 		<div class="col-md-2" align="right">
 			<button type="submit" class="btn btn-info btn-icon btn-sm icon-left" onClick="show_loading_bar(100)">Search<i class="entypo-search"></i></button>
+			<?php if($userlevel!='1'){?>
 			<a href="<?php echo base_url()."index.php/master/groupoptionaltour/add_new/"; ?>" onClick="show_loading_bar(100)" class="btn btn-info btn-icon btn-sm icon-left" title="" >Tambah<i class="entypo-plus"></i></a>
+			<?php } ?>
 		</div>
 	</div>
 </form>
@@ -33,7 +37,9 @@ if($this->session->flashdata('msg'))
 			<tr>
 				<th class="col-xs-1"><center>No</center></th>
 				<th class="col-xs-10"><center>Keterangan</center></th>
+				<?php if($userlevel!='1'){?>
 				<th class="col-xs-1"><center>Navigasi</center></th>
+				<?php } ?>
 			</tr>
 		</thead>
 		<tbody>
@@ -56,9 +62,11 @@ if($this->session->flashdata('msg'))
 			<tr style="cursor:pointer; <?php echo $bgcolor; ?>" onmouseover="change_onMouseOver('<?php echo $no; ?>')" onmouseout="change_onMouseOut('<?php echo $no; ?>')" id="<?php echo $no; ?>">
 				<td><?php echo $no; ?></td>
                 <td align="left"><?php echo $val["Keterangan"]; ?></td>
+                <?php if($userlevel!='1'){?>
                 <td align="center">
 	                <a href="<?php echo base_url();?>index.php/master/groupoptionaltour/edit_form/<?php echo $val["KdGroupOptional"]; ?>" class="btn btn-info btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Edit" title=""><i class="entypo-pencil"></i></a>
                 </td>
+                <?php } ?>
             </tr>
 			<?php	
 			

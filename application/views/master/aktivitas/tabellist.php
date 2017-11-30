@@ -1,4 +1,6 @@
-<?php $this->load->view('header'); ?>
+<?php $this->load->view('header'); 
+$userlevel = $this->session->userdata('userlevel');
+?>
 
 </head>
 <form method="POST"  name="search" action='<?php echo base_url(); ?>index.php/master/aktivitas/search'>
@@ -11,7 +13,9 @@
 		
 		<div class="col-md-2" align="right">
 			<button type="submit" class="btn btn-info btn-icon btn-sm icon-left" onClick="show_loading_bar(100)">Search<i class="entypo-search"></i></button>
+			<?php if($userlevel!='1'){?>
 			<a href="<?php echo base_url()."index.php/master/aktivitas/add_new/"; ?>" onClick="show_loading_bar(100)" class="btn btn-info btn-icon btn-sm icon-left" title="" >Tambah<i class="entypo-plus"></i></a>
+			<?php } ?>
 		</div>
 	</div>
 </form>
@@ -35,7 +39,9 @@ if($this->session->flashdata('msg'))
 				<th class="col-xs-9"><center>Nama Aktivivitas</center></th>
 				<th class="col-xs-1"><center>Status</center></th>
 				<th class="col-xs-1"><center>is Edit</center></th>
+				<?php if($userlevel!='1'){?>
 				<th class="col-xs-1"><center>Navigasi</center></th>
+				<?php } ?>
 			</tr>
 		</thead>
 		<tbody>
@@ -60,9 +66,11 @@ if($this->session->flashdata('msg'))
                 <td align="left"><?php echo $val["NamaAktivitas"]; ?></td>
                 <td align="center"><?php echo $val["Aktif"]; ?></td>
                 <td align="center"><?php echo $val["isEdit"]; ?></td>
+                <?php if($userlevel!='1'){?>
                 <td align="center">
 	                <a href="<?php echo base_url();?>index.php/master/aktivitas/edit_form/<?php echo $val["KdAktivitas"]; ?>" class="btn btn-info btn-sm sm-new tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="Edit" title=""><i class="entypo-pencil"></i></a>
                 </td>
+                <?php } ?>
             </tr>
 			<?php	
 			
