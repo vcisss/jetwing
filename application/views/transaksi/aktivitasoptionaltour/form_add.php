@@ -327,8 +327,22 @@ function hitung_net(){
 				Net_master = parseFloat(HPP);
 				persenGuide = $("#v_persentaseGuide").val()/100;
 				//masuk rumus
-				net_rumus = (sell-TL-Net_master)*persenGuide;
-				rumus = net_rumus+Net_master+TL;
+				//net_rumus = (sell-TL-Net_master)*persenGuide;
+				//rumus = net_rumus+Net_master+TL;
+				
+				//masuk rumus
+				TipeGroup = $("#TipeGroup").val();
+
+				if(TipeGroup=="1"){
+					net_rumus = (sell-TL-Net_master)*persenGuide;
+				    rumus = net_rumus+Net_master;
+				}else if(TipeGroup=="2"){
+					net_rumus = (sell-Net_master)*persenGuide;
+				    rumus = net_rumus+Net_master; 
+				}else if(TipeGroup=="3"){
+					net_rumus = (sell-TL-Net_master)*persenGuide;
+				    rumus = net_rumus+TL+Net_master; 
+				}
 				$('[name="v_net_rumus"]').val(Math.round(rumus));
 }
 </script>
