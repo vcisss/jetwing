@@ -42,7 +42,7 @@ class Tour_guide_claim_model extends CI_Model {
 	function getTour($kdgroup)
     {
     	$sql = "
-    		SELECT * FROM group_tour where KdGroup='$kdgroup';
+    		SELECT * FROM group_tour a INNER JOIN user b ON a.KdTourGuide = b.UserName WHERE a.KdGroup='$kdgroup';
 		";
 		
 		$hasil = $this->getArrayResult($sql);

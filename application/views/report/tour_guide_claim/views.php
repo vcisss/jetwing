@@ -161,6 +161,10 @@ function analisa_cari()
 	    				<td><?=$tour['NamaGroup'];?></td>
 	    			</tr>
 	    			<tr>
+	    				<td align="left">Guide</td>
+	    				<td><?=$tour['Name'];?></td>
+	    			</tr>
+	    			<tr>
 	    				<td align="left">Pax</td>
 	    				<td><?=$tour['Pax_adult'].' adult + '.$tour['Pax_child'].' child';?></td>
 	    			</tr>
