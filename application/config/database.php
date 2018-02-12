@@ -46,10 +46,16 @@ $active_record = TRUE;
 // $db['default']['password'] = 'usersukasukses';
 // $db['default']['database'] = 'gl_natura';
 
+//$db['default']['hostname'] = 'localhost';
+//$db['default']['username'] = 'users3cabang';
+//$db['default']['password'] = 'usersukasukses';
+//$db['default']['database'] = 'jetwings';
+
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'users3cabang';
+$db['default']['username'] = 'user';
 $db['default']['password'] = 'usersukasukses';
 $db['default']['database'] = 'jetwings';
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
