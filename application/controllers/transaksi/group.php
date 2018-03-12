@@ -51,7 +51,7 @@ class Group extends CI_Controller
             $config['full_tag_close'] = '</ul>';
             $config['cur_tag_open'] = '<li class="active"><a href="javascript:void(0);">';
             $config['cur_tag_close'] = '</a></li>';
-            $config['per_page'] = '10';
+            $config['per_page'] = '50';
             $config['first_link'] = 'First';
             $config['last_link'] = 'Last';
             $config['num_links'] = 2;
